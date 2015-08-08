@@ -38,10 +38,10 @@
 #define omp_set_dynamic(int) 0
 #endif
 
-#define silent 0
+#define silent 1
 #define DIM 3
 #define VERSION	"1.5"
-#define DEFAULT_NTHREADS 1
+#define DEFAULT_NTHREADS 8
 #ifndef NTHREADS /* Value passed from the LIME script */
 #define NTHREADS DEFAULT_NTHREADS
 #endif

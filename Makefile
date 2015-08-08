@@ -24,6 +24,15 @@ endif
 ifneq (,$(wildcard /usr/local/lib/.))
     LIBS += -L/usr/local/lib
 endif
+ifneq (,$(wildcard /usr/lib64/.))
+    LIBS += -L/usr/lib64
+endif
+ifneq (,$(wildcard /usr/include/.))
+    LIBS += -L/usr/include
+endif
+ifneq (,$(wildcard /usr/include/gsl/.))
+    LIBS += -L/usr/include/gsl
+endif
 
 
 CPPFLAGS	= -I${PREFIX}/include \
@@ -31,7 +40,12 @@ CPPFLAGS	= -I${PREFIX}/include \
 		  -I${HOME}/include \
 		  -I/opt/local/include \
 		  -I/sw//include \
+		  -I/usr/include \
+		  -I/usr/include/ \
 	          ${EXTRACPPFLAGS}
+
+OLD_QHULL = 1
+OLD_FITSIO = 1
 
 ifdef OLD_QHULL
 	QHULL   = qhull
